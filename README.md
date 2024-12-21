@@ -4,6 +4,8 @@ A Model Context Protocol (MCP) server that provides tools to interact with Linke
 
 This is using unofficial LinkedIn API via [Linkedin-api](https://github.com/tomquirk/linkedin-api). Use at your own risk.
 
+<a href="https://glama.ai/mcp/servers/dvbdubl2bg"><img width="380" height="200" src="https://glama.ai/mcp/servers/dvbdubl2bg/badge" alt="mcp-linkedin MCP server" /></a>
+
 ## Configuration
 
 ```json
