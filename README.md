@@ -13,7 +13,7 @@ This is using unofficial LinkedIn API via [Linkedin-api](https://github.com/tomq
     "mcpServers": {
         "linkedin": {
             "command": "uvx",
-            "args": ["--from", "https+git://github.com/adhikasp/mcp-linkedin", "mcp-linkedin"],
+            "args": ["--from", "git+https://github.com/adhikasp/mcp-linkedin", "mcp-linkedin"],
             "env": {
                 "LINKEDIN_EMAIL": "your_linkedin_email",
                 "LINKEDIN_PASSWORD": "your_linkedin_password"
