@@ -4,14 +4,15 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mcp-linkedin"
-version = "0.1.0"
+version = "0.1.1"
 description = "MCP server to interact with LinkedIn"
 readme = "README.md"
 requires-python = ">=3.7"
 dependencies = [
     "linkedin-api",
     "fastmcp",
-    "requests"
+    "requests",
+    "uvicorn",
 ]
 authors = [
     { name = "Adhika Setya Pramudita", email = "adhika.setya.p@gmail.com" }
