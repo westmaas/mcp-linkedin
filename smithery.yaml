@@ -1,0 +1,21 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - linkedinEmail
+      - linkedinPassword
+    properties:
+      linkedinEmail:
+        type: string
+        description: Your LinkedIn email address
+      linkedinPassword:
+        type: string
+        description: Your LinkedIn password
+  commandFunction:
+    # A function that produces the CLI command to start the MCP on stdio.
+    |-
+    (config) => ({command: 'uvicorn', args: ['mcp_linkedin.client:mcp.run', '--host', '0.0.0.0', '--port', '8000'], env: {LINKEDIN_EMAIL: config.linkedinEmail, LINKEDIN_PASSWORD: config.linkedinPassword}})
