@@ -2,12 +2,31 @@ from linkedin_api import Linkedin
 from fastmcp import FastMCP
 import os
 import logging
+import json
 
 mcp = FastMCP("mcp-linkedin")
 logger = logging.getLogger(__name__)
 
 def get_client():
     return Linkedin(os.getenv("LINKEDIN_EMAIL"), os.getenv("LINKEDIN_PASSWORD"), debug=True)
+
+
+@mcp.tool()
+def get_profile(username: str):
+    """
+    Retrieve LinkedIn User Profile
+    
+    :return User Profile Details as json
+    """
+    client = get_client()
+    try:
+        profile = client.get_profile(username)
+    except Exception as e:
+        logger.error(f"Error: {e}")
+        return f"Error: {e}"
+    
+    profile_json = json.dumps(profile)
+    return profile_json
 
 @mcp.tool()
 def get_feed_posts(limit: int = 10, offset: int = 0) -> str:
