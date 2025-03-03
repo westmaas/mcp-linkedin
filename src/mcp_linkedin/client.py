@@ -12,11 +12,11 @@ def get_client():
 
 
 @mcp.tool()
-def get_profile(public_id: str):
+def get_profile(public_id: str) -> str:
     """
     Get profile using public ID (the part after /in/ in profile URL)
     
-    :return User Profile Details as json
+    :return: User Profile Details as json
     """
     client = get_client()
     try:
