@@ -12,17 +12,18 @@ def get_client():
 
 
 @mcp.tool()
-def get_profile(username: str):
+def get_profile(public_id: str):
     """
-    Retrieve LinkedIn User Profile
+    Get profile using public ID (the part after /in/ in profile URL)
     
     :return User Profile Details as json
     """
     client = get_client()
     try:
-        profile = client.get_profile(username)
+    # Get profile using public ID (the part after /in/ in profile URL)
+        profile = api.get_profile(public_id=public_id)
     except Exception as e:
-        logger.error(f"Error: {e}")
+        logger.error(f"Error for {public_id}: {e}")
         return f"Error: {e}"
     
     profile_json = json.dumps(profile)
