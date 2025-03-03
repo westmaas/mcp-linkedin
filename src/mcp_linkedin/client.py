@@ -15,7 +15,7 @@ def get_client():
 def get_profile(public_id: str) -> str:
     """
     Get profile using public ID (the part after /in/ in profile URL)
-    
+    :param public_id: public ID of user (the part after /in/ in profile URL)
     :return: User Profile Details as json
     """
     client = get_client()
