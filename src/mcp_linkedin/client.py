@@ -21,7 +21,7 @@ def get_profile(public_id: str) -> str:
     client = get_client()
     try:
     # Get profile using public ID (the part after /in/ in profile URL)
-        profile = api.get_profile(public_id=public_id)
+        profile = client.get_profile(public_id=public_id)
     except Exception as e:
         logger.error(f"Error for {public_id}: {e}")
         return f"Error: {e}"
