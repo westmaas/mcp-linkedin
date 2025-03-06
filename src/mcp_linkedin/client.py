@@ -45,7 +45,7 @@ def get_feed_posts(limit: int = 10, offset: int = 0) -> str:
     
     posts = ""
     for urn in post_urns:
-        posts += f"Post by {urn["author_name"]}: {urn["content"]}\n"
+        posts += f"Post by {urn['author_name']}: {urn['content']}\n"
 
     return posts
 
